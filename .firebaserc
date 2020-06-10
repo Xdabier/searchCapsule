@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tachanytime": {
+      "hosting": {
+        "searchCapsul": [
+          "tachanytime"
+        ]
+      }
+    }
+  }
+}

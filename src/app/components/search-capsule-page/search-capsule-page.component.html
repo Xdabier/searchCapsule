@@ -1,0 +1,23 @@
+<div class="page-layout">
+  <mat-form-field class="example-chip-list">
+    <mat-chip-list #chipList aria-label="Fruit selection">
+      <mat-chip *ngFor="let word of keywords" [selectable]="selectable"
+                [removable]="removable" (removed)="remove(word)">
+        {{word.name}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input placeholder="Enter your search keyword..."
+             [matChipInputFor]="chipList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             [matChipInputAddOnBlur]="addOnBlur"
+             (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+  </mat-form-field>
+
+  <div class="results-list" *ngIf="results && results.length">
+    <div class="result-card" *ngFor="let res of results">
+      <img src="assets/placeholder.png" alt="placeholder">
+      <p>{{res["course Description"]}}</p>
+    </div>
+  </div>
+</div>
